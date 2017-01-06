@@ -1,8 +1,10 @@
 setwd("/media/bryn/DATADRIVE1/cancer/data/161130 - compare rachel and mary sets/")
 
+#load the two data sets
 mary=read.csv("mary.csv", na.strings=c("","NA"))
 rachel = read.csv("rachel.csv", na.strings=c("","NA"))
 
+#Find the NHS numbers that are in both of sets
 commonNHSnums<- intersect(mary$NHS.Number,rachel$NHS.num.encry)
 #convert the vector into a dataframe
 commonNHSnums<- as.data.frame(commonNHSnums)
